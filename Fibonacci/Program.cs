@@ -7,7 +7,6 @@ namespace Fibonacci
     {
         public static void Main(string[] args)
         {
-            // Kullanıcıdan derinliği al
             Console.Write("Fibonacci serisinin derinliğini girin: ");
             int depth;
             if (!int.TryParse(Console.ReadLine(), out depth) || depth <= 0)
@@ -16,16 +15,12 @@ namespace Fibonacci
                 return;
             }
 
-            // Fibonacci serisini oluştur
             var fibonacciSequence = FibonacciCalculator.Calculate(depth);
 
-            // Ortalama hesapla
             double average = AverageCalculator.Calculate(fibonacciSequence);
 
-            // Sonucu ekrana yazdır
             Console.WriteLine($"Fibonacci serisindeki sayıların ortalaması: {average}");
 
-            // Programın hemen kapanmasını önlemek için
             Console.WriteLine("Devam etmek için herhangi bir tuşa basın...");
             Console.ReadKey();
         }
